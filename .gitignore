@@ -1,0 +1,38 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vercel
+
+# Build outputs for the two site variants
+dist-*
+
+# Root-level original media (copies already live in src/assets)
+/Intro Video.mp4
+/Header Video.mp4
+/WhatsApp Image*.jpeg
+/Temple*.jpg
+
+# Stray local tooling
+*.mjs
+!vite.config.ts

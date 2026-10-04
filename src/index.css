@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Josefin+Sans:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&family=Pinyon+Script&family=Cinzel:wght@400;500;600&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: var(--font-heading);
+    --font-display: var(--font-display);
+    --font-body: var(--font-body);
+    --font-sans: var(--font-sans);
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --color-gold: var(--gold);
+    --color-gold-light: var(--gold-light);
+    --color-gold-deep: var(--gold-deep);
+    --color-purple: var(--purple);
+    --color-purple-light: var(--purple-light);
+    --color-purple-deep: var(--purple-deep);
+    --color-plum: var(--plum);
+    --color-plum-light: var(--plum-light);
+    --color-cream-beige: var(--cream-beige);
+    --color-ink: var(--ink);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+    /* Type roles: display = couple-name flourish only, heading = serif headings,
+       body = long-form copy, sans = small UI chrome (countdown, labels, buttons) */
+    --font-display: 'Pinyon Script', cursive;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Josefin Sans', sans-serif;
+    --font-sans: 'Poppins', sans-serif;
+
+    /* Named palette — warm terracotta + deep teal, sampled directly (pixel
+       averages + saturation-filtered picks) from the generated palace/palm
+       hero footage: ochre plaster walls and carved cream stone, teal
+       zellige tile wainscoting, and magenta bougainvillea as the one bold
+       accent. Same token names as the prior gold+purple build (only the
+       hex values changed) so every component that references var(--gold),
+       var(--purple), etc. picks up the new theme with no further edits.
+       --purple* now carries the teal family; --plum is the bougainvillea
+       magenta reserved for the one loud banner moment. */
+    --cream: #F6F1E7;
+    --cream-card: #FBF7EF;
+    --cream-beige: #EEE1C7;
+    --gold: #D7A667;
+    --gold-light: #F0D9AE;
+    --gold-deep: #8B6549;
+    --purple: #1E4A3A;
+    --purple-light: #C9DDD3;
+    --purple-deep: #12332A;
+    --plum: #AD447A;
+    --plum-light: #F2D9E4;
+    --ink: #2E2018;
+    /* Detail/relational text tone — warm terracotta-brown, the same role
+       the sampled maroon-brown played on the prior build. */
+    --ink-soft: #6B4A34;
+
+    --background: var(--cream);
+    --foreground: var(--ink);
+    --card: var(--cream-card);
+    --card-foreground: var(--ink);
+    --popover: var(--cream-card);
+    --popover-foreground: var(--ink);
+    --primary: var(--purple);
+    --primary-foreground: var(--cream-card);
+    --secondary: var(--purple-light);
+    --secondary-foreground: var(--ink);
+    --muted: #EFE6D6;
+    --muted-foreground: var(--ink-soft);
+    --accent: var(--gold-deep);
+    --accent-foreground: var(--cream-card);
+    --destructive: #B5533E;
+    --border: #E3D3AE;
+    --input: #E3D3AE;
+    --ring: var(--purple);
+    --chart-1: var(--purple);
+    --chart-2: var(--gold);
+    --chart-3: var(--plum);
+    --chart-4: var(--gold-deep);
+    --chart-5: var(--purple-deep);
+    --radius: 1.25rem;
+    --sidebar: var(--cream-card);
+    --sidebar-foreground: var(--ink);
+    --sidebar-primary: var(--purple);
+    --sidebar-primary-foreground: var(--cream-card);
+    --sidebar-accent: var(--purple-light);
+    --sidebar-accent-foreground: var(--ink);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--purple);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    }
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    }
+}
+
+/* Deliberate tint, not wallpaper: a plain warm cream-beige wash used to set
+   a handful of sections apart from the page's base cream, the same
+   "punctuation between sections" role the textured wash played before —
+   just without an image, since no matching texture asset exists for this
+   theme. */
+.floral-section {
+  background-color: var(--cream-beige);
+}
+
+@keyframes petal-fall {
+  0% { transform: translate3d(0, -10vh, 0) rotate(0deg); opacity: 0; }
+  8% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translate3d(var(--drift, 0px), 110vh, 0) rotate(var(--rotate, 360deg)); opacity: 0; }
+}
+
+@keyframes petal-sway {
+  0%, 100% { margin-left: -8px; }
+  50% { margin-left: 8px; }
+}
+
+.petal {
+  position: absolute;
+  top: 0;
+  will-change: transform, opacity;
+  animation: petal-fall linear infinite;
+  pointer-events: none;
+}
+
+.petal > span {
+  display: block;
+  animation: petal-sway ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal { animation: none; display: none; }
+}
+
+@keyframes confetti-burst {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  100% { transform: translate(var(--cx, 0px), var(--cy, 0px)) rotate(var(--crot, 180deg)); opacity: 0; }
+}
+
+.confetti-particle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  animation: confetti-burst var(--cdur, 900ms) cubic-bezier(0.2, 0.7, 0.4, 1) forwards;
+}
+
+/* Scroll reveal, used site-wide via <Reveal> so every section moves the
+   same way rather than a different effect per component. */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 750ms cubic-bezier(0.16, 1, 0.3, 1), transform 750ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Admin dashboard "live" indicator dot. */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot { animation: none; }
+}
+
+/* Hero's "scroll to view the invite" hint. */
+@keyframes scroll-hint-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+.scroll-hint-arrow {
+  animation: scroll-hint-bounce 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hint-arrow { animation: none; }
+}
+
